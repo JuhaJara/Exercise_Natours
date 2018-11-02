@@ -1,0 +1,191 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+*, 
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #777;
+    padding: 3.0rem;
+
+    box-sizing: border-box;
+}
+
+.header {
+    position: relative;
+    height: 90vh;
+    background-image: linear-gradient(to right bottom, #7ed56fcc, #27b385cc), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
+}
+
+.header__logo-box {
+    position: absolute;
+    left: 4.0rem;
+    top: 4.0rem;
+}
+
+.header__logo {
+    height: 3.0rem;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 6.0rem;
+}
+
+
+.heading-primary--main {
+    display: block;
+    font-size: 6.0rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    
+    /*
+    animation-iteration-count: 3;
+    animation-delay: 3s;
+    */
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 2.0rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+
+    animation: moveInRight 2s ease-in-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10.0rem);
+    }
+
+    80% {
+        transform: translateX(1.0rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10.0rem);
+    }
+
+    80% {
+        transform: translateX(-1.0rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3.0rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.btn:link, 
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4.0rem;
+    display: inline-block;
+    border-radius: 10.0rem;
+    transition: all .2s;
+    position: relative; 
+}
+
+.btn:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 1.0rem 2.0rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1.0rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--white {
+    background-color: #ffffff;
+    color: #777;
+}
+
+.btn::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10.0rem;
+    z-index: -1;
+
+    transition: all .2s;
+}
+
+.btn--white::after{
+    background-color: #ffffff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
+
