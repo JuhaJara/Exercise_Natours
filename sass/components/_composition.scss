@@ -1,6 +1,5 @@
 .composition {
   position: relative;
-
   top: -1.5rem;
 
   &__photo {
@@ -19,7 +18,7 @@
       z-index: 11;
       outline: 1.5rem solid $color-primary;
     }
-
+    
     &--p1 {
       left: 0;
       top: -2rem;
